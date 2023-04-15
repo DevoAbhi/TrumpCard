@@ -1,0 +1,36 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    background-color: #FF5F5F;
+    color: #F7D9AA;
+    padding: 0 2rem;
+  }
+
+  .navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .navbar-buttons {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbar-brand a{
+    text-decoration: none !important;
+  }
+
+  .navbar-buttons a {
+    color: #F7D9AA;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .navbar-buttons a:hover {
+    color: #FFF;
+  }
