@@ -183,10 +183,11 @@ const Game = () => {
                         ></Card>
                     ))}
                 </div>
+                <div className="name1">Abhinab</div>
             </div>
             <div className="gameArea"></div>
             <div className="player2Area">
-            <div className="cards2">
+                <div className="cards2">
                     {player2Deck.map(card => (
                         <Card
                             name={card.name}
@@ -195,6 +196,7 @@ const Game = () => {
                         ></Card>
                     ))}
                 </div>
+                <div className="name2">Computer</div>
             </div>
         </div>
     )
