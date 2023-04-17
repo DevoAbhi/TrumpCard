@@ -1,7 +1,8 @@
 import React from "react";
 import "../pages/Card.css";
 
-const Card = ({ name, imageUrl, hp, attack, defense, specialAttack, specialDefense, speed }) => {
+const Card = (props) => {
+
     const cards = [{
         "_id" : ("643ab55f2b863a18580591fe"),
         "cardType" : "pokemon",
@@ -121,9 +122,12 @@ const Card = ({ name, imageUrl, hp, attack, defense, specialAttack, specialDefen
         "__v" : 0
     }];
     const card = cards[0];
+    const handleCard = () => {
+        alert("Hello")
+    }
 
     return (
-        <div className="card">
+        <div className="card" onClick={handleCard}>
           <div className="card-image">
             <img src={card.imageUrl} alt={card.cardName} />
           </div>

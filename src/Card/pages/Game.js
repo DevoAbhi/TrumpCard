@@ -11,7 +11,7 @@ const Game = () => {
 
     const player1Deck = [
         {
-            "_id": ("643ab5612b863a1858059216"),
+            "_id": "643ab5612b863a1858059216",
             "cardType": "pokemon",
             "cardName": "reshiram",
             "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/643.png",
@@ -51,7 +51,7 @@ const Game = () => {
         }
 
         , {
-            "_id": ("643ab55f2b863a18580591fe"),
+            "_id": "643ab55f2b863a18580591fe",
             "cardType": "pokemon",
             "cardName": "palkia",
             "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/484.png",
@@ -93,7 +93,7 @@ const Game = () => {
 
     const player2Deck = [
         {
-            "_id": ("643ab5572b863a18580590c6"),
+            "_id": "643ab5572b863a18580590c6",
             "cardType": "pokemon",
             "cardName": "blastoise",
             "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
@@ -133,6 +133,7 @@ const Game = () => {
         }
 
         , {
+            "_id": "643ab5572b863a18580590c8",
             "cardType": "pokemon",
             "cardName": "mewtwo",
             "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
@@ -172,28 +173,37 @@ const Game = () => {
         }
     ]
 
+    const handleCard = () => {
+        alert("Hello")
+        // console.log(card._id);
+    }
+
     return (
         <div className='game'>
             <div className="player1Area">
                 <div className="cards1">
                     {player1Deck.map(card => (
                         <Card
+                            key={card._id}
                             name={card.name}
                             imageUrl={card.imageUrl}
-
+                            attributes={card.attributes}
                         ></Card>
                     ))}
+
                 </div>
                 <div className="name1">Abhinab</div>
+
             </div>
             <div className="gameArea"></div>
             <div className="player2Area">
                 <div className="cards2">
                     {player2Deck.map(card => (
                         <Card
+                            key={card._id}
                             name={card.name}
                             imageUrl={card.imageUrl}
-
+                            attributes={card.attributes}
                         ></Card>
                     ))}
                 </div>

@@ -2,7 +2,7 @@
 .player2Area {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 92vh;
 
   border: 2px solid black;
   justify-content: center;
