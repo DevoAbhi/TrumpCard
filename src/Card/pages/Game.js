@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import Card from './Card';
 import './Game.css';
 
+
 const Game = () => {
     const location = useLocation();
     const cardType = new URLSearchParams(location.search).get('cardType');
