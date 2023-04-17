@@ -173,10 +173,7 @@ const Game = () => {
         }
     ]
 
-    const handleCard = () => {
-        alert("Hello")
-        // console.log(card._id);
-    }
+
 
     return (
         <div className='game'>
@@ -185,7 +182,7 @@ const Game = () => {
                     {player1Deck.map(card => (
                         <Card
                             key={card._id}
-                            name={card.name}
+                            cardName={card.cardName}
                             imageUrl={card.imageUrl}
                             attributes={card.attributes}
                         ></Card>
@@ -201,7 +198,7 @@ const Game = () => {
                     {player2Deck.map(card => (
                         <Card
                             key={card._id}
-                            name={card.name}
+                            cardName={card.cardName}
                             imageUrl={card.imageUrl}
                             attributes={card.attributes}
                         ></Card>
