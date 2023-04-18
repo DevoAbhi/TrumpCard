@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import Card from './Card';
 import GameSection from '../components/GameSection';
+
 import './Game.css';
 
 
@@ -215,6 +216,7 @@ const Game = () => {
                 setPlayer1ChosenCard={setPlayer1ChosenCard}
                 setPlayer2ChosenCard={setPlayer2ChosenCard}
             ></GameSection>
+
 
             {/* <p>
                 {(Object.keys(player1ChosenCard).length !== 0)?`Player1 chosen card: ${player1ChosenCard.cardName}`: ""}
