@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import Card from './Card';
+import GameSection from '../components/GameSection';
 import './Game.css';
 
 
@@ -206,38 +207,22 @@ const Game = () => {
                 <div className="name1">Abhinab</div>
 
             </div>
-            <div className="gameArea">
-                <div className="chosenCards">
-                    <div className="player1card">
-                        {(Object.keys(player1ChosenCard).length !== 0) ?
-                            <Card
-                                key={player1ChosenCard._id}
-                                cardName={player1ChosenCard.cardName}
-                                imageUrl={player1ChosenCard.imageUrl}
-                                attributes={player1ChosenCard.attributes}
-                                clickCard={false}
-                            ></Card>
-                            : ""}
-                    </div>
-                    <div className="player2card">
-                        {(Object.keys(player2ChosenCard).length !== 0) ?
-                            <Card
-                                key={player2ChosenCard._id}
-                                cardName={player2ChosenCard.cardName}
-                                imageUrl={player2ChosenCard.imageUrl}
-                                attributes={player2ChosenCard.attributes}
-                                clickCard={false}
-                            ></Card>
-                            : ""}
-                    </div>
-                </div>
-                {/* <p>
+
+
+            <GameSection
+                player1ChosenCard={player1ChosenCard}
+                player2ChosenCard={player2ChosenCard}
+                setPlayer1ChosenCard={setPlayer1ChosenCard}
+                setPlayer2ChosenCard={setPlayer2ChosenCard}
+            ></GameSection>
+
+            {/* <p>
                 {(Object.keys(player1ChosenCard).length !== 0)?`Player1 chosen card: ${player1ChosenCard.cardName}`: ""}
                 </p>
                 <p>
                 {(Object.keys(player2ChosenCard).length !== 0)?`Player2 chosen card: ${player2ChosenCard.cardName}`: ""}
                 </p> */}
-            </div>
+
             <div className="player2Area">
                 <div className="cards2">
                     {player2Deck.map(card => (
@@ -253,7 +238,7 @@ const Game = () => {
                             setPlayer2Deck={setPlayer2Deck}
                             player1Deck={player1Deck}
                             player2Deck={player2Deck}
-                            clickCard={true}
+                            clickCard={false}
                         ></Card>
                     ))}
                 </div>
