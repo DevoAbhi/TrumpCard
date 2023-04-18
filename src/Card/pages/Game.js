@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import Card from './Card';
 import './Game.css';
 
@@ -6,10 +7,7 @@ import './Game.css';
 const Game = () => {
     const location = useLocation();
     const cardType = new URLSearchParams(location.search).get('cardType');
-    console.log(cardType);
-
-
-    const player1Deck = [
+    const player1DeckCards = [
         {
             "_id": "643ab5612b863a1858059216",
             "cardType": "pokemon",
@@ -91,7 +89,7 @@ const Game = () => {
         }
     ]
 
-    const player2Deck = [
+    const player2DeckCards = [
         {
             "_id": "643ab5572b863a18580590c6",
             "cardType": "pokemon",
@@ -173,6 +171,14 @@ const Game = () => {
         }
     ]
 
+    const [player1ChosenCard, setPlayer1ChosenCard] = useState({});
+    const [player2ChosenCard, setPlayer2ChosenCard] = useState({});
+    const [player1Deck,setPlayer1Deck] = useState(player1DeckCards);
+    const [player2Deck,setPlayer2Deck] = useState(player2DeckCards);
+
+
+
+
 
 
     return (
@@ -185,6 +191,12 @@ const Game = () => {
                             cardName={card.cardName}
                             imageUrl={card.imageUrl}
                             attributes={card.attributes}
+                            card={card}
+                            setPlayer1ChosenCard={setPlayer1ChosenCard}
+                            setPlayer2ChosenCard={setPlayer2ChosenCard}
+                            setPlayer1Deck={setPlayer1Deck}
+                            player1Deck={player1Deck}
+                            player2Deck={player2Deck}
                         ></Card>
                     ))}
 
@@ -192,7 +204,10 @@ const Game = () => {
                 <div className="name1">Abhinab</div>
 
             </div>
-            <div className="gameArea"></div>
+            <div className="gameArea">
+                {(Object.keys(player1ChosenCard).length !== 0)?`Player1 chosen card: ${player1ChosenCard.cardName}`: ""}
+                {(Object.keys(player2ChosenCard).length !== 0)?`Player2 chosen card: ${player2ChosenCard.cardName}`: ""}
+            </div>
             <div className="player2Area">
                 <div className="cards2">
                     {player2Deck.map(card => (
