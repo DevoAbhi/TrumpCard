@@ -173,8 +173,8 @@ const Game = () => {
 
     const [player1ChosenCard, setPlayer1ChosenCard] = useState({});
     const [player2ChosenCard, setPlayer2ChosenCard] = useState({});
-    const [player1Deck,setPlayer1Deck] = useState(player1DeckCards);
-    const [player2Deck,setPlayer2Deck] = useState(player2DeckCards);
+    const [player1Deck, setPlayer1Deck] = useState(player1DeckCards);
+    const [player2Deck, setPlayer2Deck] = useState(player2DeckCards);
 
 
 
@@ -195,8 +195,10 @@ const Game = () => {
                             setPlayer1ChosenCard={setPlayer1ChosenCard}
                             setPlayer2ChosenCard={setPlayer2ChosenCard}
                             setPlayer1Deck={setPlayer1Deck}
+                            setPlayer2Deck={setPlayer2Deck}
                             player1Deck={player1Deck}
                             player2Deck={player2Deck}
+                            clickCard={true}
                         ></Card>
                     ))}
 
@@ -205,8 +207,36 @@ const Game = () => {
 
             </div>
             <div className="gameArea">
+                <div className="chosenCards">
+                    <div className="player1card">
+                        {(Object.keys(player1ChosenCard).length !== 0) ?
+                            <Card
+                                key={player1ChosenCard._id}
+                                cardName={player1ChosenCard.cardName}
+                                imageUrl={player1ChosenCard.imageUrl}
+                                attributes={player1ChosenCard.attributes}
+                                clickCard={false}
+                            ></Card>
+                            : ""}
+                    </div>
+                    <div className="player2card">
+                        {(Object.keys(player2ChosenCard).length !== 0) ?
+                            <Card
+                                key={player2ChosenCard._id}
+                                cardName={player2ChosenCard.cardName}
+                                imageUrl={player2ChosenCard.imageUrl}
+                                attributes={player2ChosenCard.attributes}
+                                clickCard={false}
+                            ></Card>
+                            : ""}
+                    </div>
+                </div>
+                {/* <p>
                 {(Object.keys(player1ChosenCard).length !== 0)?`Player1 chosen card: ${player1ChosenCard.cardName}`: ""}
+                </p>
+                <p>
                 {(Object.keys(player2ChosenCard).length !== 0)?`Player2 chosen card: ${player2ChosenCard.cardName}`: ""}
+                </p> */}
             </div>
             <div className="player2Area">
                 <div className="cards2">
@@ -216,6 +246,14 @@ const Game = () => {
                             cardName={card.cardName}
                             imageUrl={card.imageUrl}
                             attributes={card.attributes}
+                            card={card}
+                            setPlayer1ChosenCard={setPlayer1ChosenCard}
+                            setPlayer2ChosenCard={setPlayer2ChosenCard}
+                            setPlayer1Deck={setPlayer1Deck}
+                            setPlayer2Deck={setPlayer2Deck}
+                            player1Deck={player1Deck}
+                            player2Deck={player2Deck}
+                            clickCard={true}
                         ></Card>
                     ))}
                 </div>
