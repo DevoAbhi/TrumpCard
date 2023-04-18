@@ -123,12 +123,17 @@ const Card = (props) => {
     //     "__v" : 0
     // }];
     // const card = cards[0];
-    const handleCard = () => {
-        alert("Hello")
+    const handleCard = (card) => {
+      console.log("Hello");
+        props.setPlayer1ChosenCard(card);
+        const id = card._id;
+        const filterP1Cards = props.player1Deck.filter(card => card._id !== id);
+        props.setPlayer1Deck(filterP1Cards);
+
     }
 
     return (
-        <div className="card" onClick={handleCard}>
+        <div className="card" onClick={() => handleCard(props.card)}>
           <div className="card-image">
             <img src={props.imageUrl} alt={props.cardName} />
           </div>
@@ -136,7 +141,10 @@ const Card = (props) => {
             <div className="pokemon-card-name">{props.cardName}</div>
             <div className="pokemon-card-attributes">
                 {props.attributes.map(attribute => (
-                    <CardItems name={attribute.name} value={attribute.value} />
+                    <CardItems
+                     key={attribute._id}
+                     name={attribute.name}
+                     value={attribute.value} />
                 ))}
             </div>
             {/* <div className="pokemon-card-attributes">
