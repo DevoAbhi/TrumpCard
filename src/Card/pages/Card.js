@@ -5,7 +5,7 @@ import CardItems from "../components/CardItems";
 
 const Card = (props) => {
 
-  
+
   // const cards = [{
   //     "_id" : ("643ab55f2b863a18580591fe"),
   //     "cardType" : "pokemon",
@@ -184,6 +184,56 @@ const Card = (props) => {
             </div> */}
       </div>
     </div>
+
+
+
+
+
+
+    // <div className="card" >
+    //   <div className="card-image">
+    //     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/484.png" alt="none" />
+    //   </div>
+    //   <div className="card-details">
+    //     <div className="pokemon-card-name">palkia</div>
+    //     {/* <div className="pokemon-card-attributes">
+    //       {props.attributes.map(attribute => (
+    //         <CardItems
+    //           key={attribute._id}
+    //           name={attribute.name}
+    //           value={attribute.value} />
+    //       ))}
+    //     </div> */}
+    //     <div className="pokemon-card-attributes">
+
+    //       <div className="pokemon-card-attribute">
+    //         <div className="pokemon-card-attribute-label">hp</div>
+    //         <div className="pokemon-card-attribute-value">90</div>
+    //       </div>
+    //       <div className="pokemon-card-attribute">
+    //         <div className="pokemon-card-attribute-label">attack</div>
+    //         <div className="pokemon-card-attribute-value">120</div>
+    //       </div>
+    //       <div className="pokemon-card-attribute">
+    //         <div className="pokemon-card-attribute-label">defense</div>
+    //         <div className="pokemon-card-attribute-value">100</div>
+    //       </div>
+    //       <div className="pokemon-card-attribute">
+    //         <div className="pokemon-card-attribute-label">special-attack</div>
+    //         <div className="pokemon-card-attribute-value">150</div>
+    //       </div>
+    //       <div className="pokemon-card-attribute">
+    //         <div className="pokemon-card-attribute-label">special-defense</div>
+    //         <div className="pokemon-card-attribute-value">120</div>
+    //       </div>
+    //       <div className="pokemon-card-attribute">
+    //         <div className="pokemon-card-attribute-label">speed</div>
+    //         <div className="pokemon-card-attribute-value">130</div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+
 
   );
 };
