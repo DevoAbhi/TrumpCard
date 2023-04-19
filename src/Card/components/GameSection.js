@@ -3,6 +3,7 @@ import Card from '../pages/Card';
 import Modal from './Modal';
 
 import './GameSection.css';
+import Button from './Button';
 
 
 function GameSection(props) {
@@ -62,7 +63,7 @@ function GameSection(props) {
     return (
         <div className="gameArea">
             {showModal && <Modal
-                isTie={true}
+                isTie={isTie}
                 attributeChosen={attributeChosen}
                 winner={winner}
                 loser={loser}
@@ -70,7 +71,10 @@ function GameSection(props) {
                 setShowModal={setShowModal}
             ></Modal>}
 
+
+
             <div className="chosenCards">
+                {(Object.keys(props.player1ChosenCard).length === 0) && <Button button={false}>Choose a Card!</Button>}
                 <div className="player1card">
                     {(Object.keys(props.player1ChosenCard).length !== 0) ?
                         <Card
@@ -96,7 +100,8 @@ function GameSection(props) {
 
             </div>
             {(Object.keys(props.player1ChosenCard).length !== 0)?
-                <button className="compareBtn" onClick={handleChosenCards}>Compare</button>
+                <div className="compareBtn" onClick={handleChosenCards}>Compare</div>
+                // <Button button={true} onClick={handleChosenCards}>Compare</Button>
                 : ""
             }
 
