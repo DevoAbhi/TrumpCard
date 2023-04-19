@@ -1,9 +1,14 @@
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .player1Area,
 .player2Area {
   display: flex;
   flex-direction: column;
+  /* width: 33.3vw; */
   height: 92vh;
-
   border: 2px solid black;
   justify-content: center;
   align-items: center;
@@ -24,26 +29,29 @@
   border: 2px solid black;
 } */
 
-.game {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .cards1 {
-  width: 250px;
-  display: flex;
   /* width: 100%; */
-  max-height: 100%;
-  overflow-x: scroll; /* add horizontal scroll bar */
-  white-space: nowrap;
+  /* max-height: 100%; */
+  /* width: 260px;
+  display: flex;
+  overflow-x: scroll;
+  white-space: nowrap; */
+
+  max-width: 270px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+
+  /* overflow-x: auto; */
 }
 .cards2 {
+  width: 300px;
   display: flex;
-  align-items: flex-end;
+  /* align-items: flex-end; */
   /* width: 100%; */
-  width: 250px;
-  max-height: 100%;
-  overflow-x: scroll; /* add horizontal scroll bar */
+  /* max-height: 100%; */
+  overflow-x: auto; /* add horizontal scroll bar */
   white-space: nowrap;
 }
 
