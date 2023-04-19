@@ -10,6 +10,46 @@ const Game = () => {
     const location = useLocation();
     const cardType = new URLSearchParams(location.search).get('cardType');
     const player1DeckCards = [
+        // {
+        //     "_id" : ("643aee2483e91332c703146b"),
+        //     "cardType" : "avengers",
+        //     "cardName" : "thor",
+        //     "imageUrl" : "https://www.superherodb.com/pictures2/portraits/10/100/727.jpg",
+        //     "attributes" : [
+        //         {
+        //             "name" : "intelligence",
+        //             "value" : "100",
+        //             "_id" : ("643aee2483e91332c703146c")
+        //         },
+        //         {
+        //             "name" : "strength",
+        //             "value" : "53",
+        //             "_id" : ("643aee2483e91332c703146d")
+        //         },
+        //         {
+        //             "name" : "speed",
+        //             "value" : "25",
+        //             "_id" : ("643aee2483e91332c703146e")
+        //         },
+        //         {
+        //             "name" : "durability",
+        //             "value" : "65",
+        //             "_id" : ("643aee2483e91332c703146f")
+        //         },
+        //         {
+        //             "name" : "power",
+        //             "value" : "68",
+        //             "_id" : ("643aee2483e91332c7031470")
+        //         },
+        //         {
+        //             "name" : "combat",
+        //             "value" : "70",
+        //             "_id" : ("643aee2483e91332c7031471")
+        //         }
+        //     ],
+        //     "__v" : (0)
+        // }
+
         {
             "_id": "643ab5612b863a1858059216",
             "cardType": "pokemon",
@@ -184,7 +224,7 @@ const Game = () => {
 
 
     return (
-        <div className='game'>
+        <div className='game' >
             <div className="player1Area">
                 <div className="cards1">
                     {player1Deck.map(card => (
@@ -203,6 +243,7 @@ const Game = () => {
                             clickCard={true}
                         ></Card>
                     ))}
+                    
 
                 </div>
                 <div className="name1">Abhinab</div>
@@ -218,12 +259,7 @@ const Game = () => {
             ></GameSection>
 
 
-            {/* <p>
-                {(Object.keys(player1ChosenCard).length !== 0)?`Player1 chosen card: ${player1ChosenCard.cardName}`: ""}
-                </p>
-                <p>
-                {(Object.keys(player2ChosenCard).length !== 0)?`Player2 chosen card: ${player2ChosenCard.cardName}`: ""}
-                </p> */}
+
 
             <div className="player2Area">
                 <div className="cards2">
