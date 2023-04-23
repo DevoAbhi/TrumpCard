@@ -1,0 +1,31 @@
+.dashboard-container {
+    height: 92.6vh;
+    background-color: #ee82ee;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.dashboard-header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.dashboard-title {
+    font-size: 40px;
+    font-weight: 600;
+}
+.dashboard-subtitle {
+    font-size: 15px;
+    opacity: 0.6;
+}
+
+
+.card-collection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+
