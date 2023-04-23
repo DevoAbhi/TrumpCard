@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import "../pages/Card.css";
 import CardItems from "../components/CardItems";
 
@@ -128,8 +127,8 @@ const Card = (props) => {
   const handleCard = (card) => {
     //Player 1
     props.setPlayer1ChosenCard(card);
-    const id = card._id;
-    const filterP1Cards = props.player1Deck.filter(card => card._id !== id);
+    const id = card?._id;
+    const filterP1Cards = props.player1Deck.filter(card => card?._id !== id);
     props.setPlayer1Deck(filterP1Cards);
 
     //Player 2
@@ -138,23 +137,21 @@ const Card = (props) => {
     const P2chosenCard = props.player2Deck[randomIdx];
     props.setPlayer2ChosenCard(P2chosenCard);
 
-    const filterP2Cards = props.player2Deck.filter(card => card._id !== P2chosenCard._id);
+    const filterP2Cards = props.player2Deck.filter(card => card?._id !== P2chosenCard._id);
     props.setPlayer2Deck(filterP2Cards);
-
-
   }
 
   return (
     <div className="card" onClick={props.clickCard ? () => handleCard(props.card) : null}>
       <div className="card-image">
-        <img src={props.imageUrl} alt={props.cardName} />
+        <img className="card-img-details" src={props.imageUrl} alt={props.cardName} />
       </div>
       <div className="card-details">
         <div className="pokemon-card-name">{props.cardName}</div>
         <div className="pokemon-card-attributes">
           {props.attributes.map(attribute => (
             <CardItems
-              key={attribute._id}
+              key={attribute?._id}
               name={attribute.name}
               value={attribute.value} />
           ))}

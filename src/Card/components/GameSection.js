@@ -78,7 +78,7 @@ function GameSection(props) {
                 <div className="player1card">
                     {(Object.keys(props.player1ChosenCard).length !== 0) ?
                         <Card
-                            key={props.player1ChosenCard._id}
+                            key={props.player1ChosenCard?._id}
                             cardName={props.player1ChosenCard.cardName}
                             imageUrl={props.player1ChosenCard.imageUrl}
                             attributes={props.player1ChosenCard.attributes}
@@ -89,7 +89,7 @@ function GameSection(props) {
                 <div className="player2card">
                     {(Object.keys(props.player2ChosenCard).length !== 0) ?
                         <Card
-                            key={props.player2ChosenCard._id}
+                            key={props.player2ChosenCard?._id}
                             cardName={props.player2ChosenCard.cardName}
                             imageUrl={props.player2ChosenCard.imageUrl}
                             attributes={props.player2ChosenCard.attributes}

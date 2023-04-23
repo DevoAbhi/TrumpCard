@@ -2,6 +2,7 @@
   border: 2px solid black;
   height: 360px;
   min-width: 260px;
+  max-width: 260px;
   display: flex;
   flex-direction: column;
   /* display: grid;
@@ -34,7 +35,7 @@
     align-items: center; */
 }
 
-img {
+.card-img-details {
   /* width: 70%;
     height: 100%;
     background-size:2000px; */
