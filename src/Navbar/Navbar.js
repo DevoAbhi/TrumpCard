@@ -8,9 +8,10 @@ const Navbar = () => {
       <div className="navbar-brand">
         <Link to="/">Trump Card Game</Link>
       </div>
-      <div className="navbar-buttons">
-        <Link to="/login">Login</Link>
-        <Link to="/about">About</Link>
+      <div className="navbar-nav">
+        <div className="nav-item">
+        <Link className='nav-link' to="/auth" >Login</Link>
+        </div>
       </div>
     </nav>
   );
