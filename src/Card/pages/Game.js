@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card from './Card';
 import GameSection from '../components/GameSection';
 
@@ -9,6 +9,7 @@ import './Game.css';
 const Game = () => {
     const location = useLocation();
     const cardType = new URLSearchParams(location.search).get('cardType');
+    alert(cardType);
     const player1DeckCards = [
         // {
         //     "_id" : ("643aee2483e91332c703146b"),
@@ -229,7 +230,7 @@ const Game = () => {
                 <div className="cards1">
                     {player1Deck.map(card => (
                         <Card
-                            key={card._id}
+                            key={card?._id}
                             cardName={card.cardName}
                             imageUrl={card.imageUrl}
                             attributes={card.attributes}
@@ -243,7 +244,7 @@ const Game = () => {
                             clickCard={true}
                         ></Card>
                     ))}
-                    
+
 
                 </div>
                 <div className="name1">Abhinab</div>
@@ -265,7 +266,7 @@ const Game = () => {
                 <div className="cards2">
                     {player2Deck.map(card => (
                         <Card
-                            key={card._id}
+                            key={card?._id}
                             cardName={card.cardName}
                             imageUrl={card.imageUrl}
                             attributes={card.attributes}
