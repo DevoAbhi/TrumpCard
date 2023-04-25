@@ -13,8 +13,6 @@ const cardReducer = (state = { player1Deck: [], player2Deck: [] }, action) => {
         case "REMOVE CARD FROM DECK":
             const filterP1Cards = state.player1Deck.filter(card => card?._id !== action.payload.P1cardId);
             const filterP2Cards = state.player2Deck.filter(card => card?._id !== action.payload.P2cardId);
-            console.log("filterP1Cards => ", filterP1Cards)
-            console.log("filterP2Cards => ", filterP2Cards)
 
             return {
                 ...state,

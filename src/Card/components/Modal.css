@@ -16,9 +16,9 @@
   border: 2px solid red;
   position: relative;
   padding: 1rem;
-  max-width: 90%;
-  max-height: 90%;
-  overflow: auto;
+  /* max-width: 90%;
+  max-height: 90%; */
+  /* overflow: auto; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,4 +79,9 @@
   padding: 5px;
   margin: 10px;
   cursor: pointer;
+}
+
+.both-values {
+  display: flex;
+  justify-content: space-between;
 }

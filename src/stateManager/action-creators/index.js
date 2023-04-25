@@ -42,6 +42,20 @@ export const loginUser = (formData, navigate) => async (dispatch) => {
     }
 }
 
+export const logoutUser = (navigate) => (dispatch) => {
+    try {
+        dispatch({
+            type: "LOGOUT"
+        })
+
+        navigate("/auth");
+    }
+
+    catch (error) {
+
+    }
+}
+
 export const getCards = (cardType) => async (dispatch) => {
     try {
         const {data} = await api.getCards(cardType);

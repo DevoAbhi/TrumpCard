@@ -20,8 +20,8 @@ function Modal(props) {
                             <span className='attribute-chosen-name'>{props.attributeChosen}</span> was the atribute chosen.
                         </div>
                         <div className="winner">
-                            <span className='winner-name'>Abhinab</span> has won this round!
-                            {/* <span className='winner-name'>{props.winner.name}</span> has won this round! */}
+                            {/* <span className='winner-name'>Abhinab</span> has won this round! */}
+                            <span className='winner-name'>{props.winner.name}</span> has won this round!
                         </div>
                     </div>
                 }
@@ -31,16 +31,17 @@ function Modal(props) {
                 <div className="reason">
                     {!props.isTie &&
                         <div className="winner-margin">
-                            <span className='winner-name'>Abhinab</span> has won by a margin of <span className='margin'>{props.margin}</span>!
+                            {/* <span className='winner-name'>Abhinab</span> has won by a margin of <span className='margin'>{props.margin}</span>! */}
+                            <span className='winner-name'>{props.winner.name}</span> has won by a margin of <span className='margin'>{props.margin}</span>!
                         </div>
                     }
 
                     {/* <span className='winner-name'>{props.winner.name}</span> has won by a margin of <span className='margin'>{props.margin}</span>! */}
                     <div className='both-values'>
-                        <span className='value1'>Abhinab = {props.winner.attributes.find(attribute => attribute.name === props.attributeChosen)?.value} </span>
-                        {/* <span className='value1'>{props.winner.name} = {props.winner.attributes.find(attribute => attribute.name === props.attributeChosen)?.value}</span> */}
-                        <span className='value2'>Abhinab = {props.loser.attributes.find(attribute => attribute.name === props.attributeChosen)?.value}</span>
-                        {/* <span className='value2'>{props.loser.name} = {props.loser.attributes.find(attribute => attribute.name === props.attributeChosen)?.value}</span> */}
+                        {/* <span className='value1'>Abhinab = {props.winner.attributes.find(attribute => attribute.name === props.attributeChosen)?.value} </span> */}
+                        <span className='value1'>{props.winner.name} = {props.winner.attributes.find(attribute => attribute.name === props.attributeChosen)?.value} </span>
+                        {/* <span className='value2'>Abhinab = {props.loser.attributes.find(attribute => attribute.name === props.attributeChosen)?.value}</span> */}
+                        <span className='value2'>{props.loser.name} = {props.loser.attributes.find(attribute => attribute.name === props.attributeChosen)?.value}</span>
                     </div>
                 </div>
             </div>

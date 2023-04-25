@@ -26,33 +26,29 @@ function GameSection(props) {
 
         setAttributeChosen(randomAttributeP1.name);
 
-        console.log("randomAttributeP1 => ", randomAttributeP1);
-        console.log("randomAttributeP2 => ", randomAttributeP2);
-
         if(parseInt(randomAttributeP1.value, 10) > parseInt(randomAttributeP2.value, 10)) {
-            console.log("randomAttributeP1.value => ", randomAttributeP1.value);
-            console.log("randomAttributeP2.value => ", randomAttributeP2.value);
-            console.log("Player 1 won this round!")
-
-
-            setWinner(props.player1ChosenCard);
-            setLoser(props.player2ChosenCard);
+            //Player 1 won
+            setWinner({...props.player1ChosenCard, name: props.player1});
+            setLoser({...props.player2ChosenCard, name: props.player2});
+            // setWinner(props.player1ChosenCard);
+            // setLoser(props.player2ChosenCard);
             const diff = randomAttributeP1.value - randomAttributeP2.value;
             setMargin(diff);
         }
         else if(parseInt(randomAttributeP2.value, 10) > parseInt(randomAttributeP1.value, 10)) {
-            console.log("randomAttributeP1.value => ", randomAttributeP1.value);
-            console.log("randomAttributeP2.value => ", randomAttributeP2.value);
-            console.log("Player 2 won this round!")
-
-            setWinner(props.player2ChosenCard);
-            setLoser(props.player1ChosenCard);
+            //Player 2 won
+            setWinner({...props.player2ChosenCard, name: props.player2});
+            setLoser({...props.player1ChosenCard, name: props.player1});
+            // setWinner(props.player2ChosenCard);
+            // setLoser(props.player1ChosenCard);
             const diff = randomAttributeP2.value - randomAttributeP1.value;
             setMargin(diff);
         }
         else {
-            console.log("Tie!");
+            // Tie
             setIsTie(true);
+            setWinner({...props.player2ChosenCard, name: props.player2});
+            setLoser({...props.player1ChosenCard, name: props.player1});
         }
 
         props.setPlayer1ChosenCard({});
