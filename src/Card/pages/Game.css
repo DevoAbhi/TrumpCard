@@ -41,17 +41,24 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  white-space: nowrap;
 
 
   /* overflow-x: auto; */
 }
 .cards2 {
-  width: 300px;
+  /* width: 300px;
   display: flex;
+  overflow-x: auto;
+  white-space: nowrap; */
   /* align-items: flex-end; */
   /* width: 100%; */
   /* max-height: 100%; */
-  overflow-x: auto; /* add horizontal scroll bar */
+
+  max-width: 270px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   white-space: nowrap;
 }
 
