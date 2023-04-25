@@ -41,3 +41,32 @@ export const loginUser = (formData, navigate) => async (dispatch) => {
         console.log("Error while logging in -> ", error);
     }
 }
+
+export const getCards = (cardType) => async (dispatch) => {
+    try {
+        const {data} = await api.getCards(cardType);
+        console.log("data => ", data);
+
+        dispatch({
+            type: "GET CARDS",
+            payload: data
+        })
+    }
+
+    catch (error) {
+        console.log("Error while getting the cards -> ", error);
+    }
+}
+
+export const removeCardFromDeck = (P1cardId, P2cardId) => async (dispatch) => {
+    try {
+        dispatch({
+            type: "REMOVE CARD FROM DECK",
+            payload: {P1cardId, P2cardId}
+        })
+    }
+
+    catch (error) {
+        console.log("Error while getting the cards -> ", error);
+    }
+}

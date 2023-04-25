@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import PlayerDeck from './PlayerDeck';
 import Card from './Card';
 import GameSection from '../components/GameSection';
 import { getCards } from '../../stateManager/action-creators';
