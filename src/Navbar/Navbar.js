@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
+
+  const userData = JSON.parse(localStorage.getItem('profile'));
+
   return (
     <nav className="navbar-container">
       <div className="navbar-brand">
