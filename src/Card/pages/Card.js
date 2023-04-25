@@ -1,8 +1,12 @@
 import React from "react";
 import "../pages/Card.css";
 import CardItems from "../components/CardItems";
+import { removeCardFromDeck } from "../../stateManager/action-creators";
+import { useDispatch } from "react-redux";
 
 const Card = (props) => {
+
+  const dispatch = useDispatch();
 
 
   // const cards = [{
@@ -128,8 +132,10 @@ const Card = (props) => {
     //Player 1
     props.setPlayer1ChosenCard(card);
     const id = card?._id;
-    const filterP1Cards = props.player1Deck.filter(card => card?._id !== id);
-    props.setPlayer1Deck(filterP1Cards);
+    // const filterP1Cards = props.player1Deck.filter(card => card?._id !== id);
+    // props.setPlayer1Deck(filterP1Cards);
+
+
 
     //Player 2
     const P2len = props.player2Deck.length;
@@ -137,8 +143,10 @@ const Card = (props) => {
     const P2chosenCard = props.player2Deck[randomIdx];
     props.setPlayer2ChosenCard(P2chosenCard);
 
-    const filterP2Cards = props.player2Deck.filter(card => card?._id !== P2chosenCard._id);
-    props.setPlayer2Deck(filterP2Cards);
+    // const filterP2Cards = props.player2Deck.filter(card => card?._id !== P2chosenCard._id);
+    // props.setPlayer2Deck(filterP2Cards);
+
+    dispatch(removeCardFromDeck(id, P2chosenCard._id));
   }
 
   return (
