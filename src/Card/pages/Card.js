@@ -131,7 +131,7 @@ const Card = (props) => {
   const handleCard = (card) => {
     //Player 1
     props.setPlayer1ChosenCard(card);
-    const id = card?._id;
+    const P2ChosenCard_id = card?._id;
     // const filterP1Cards = props.player1Deck.filter(card => card?._id !== id);
     // props.setPlayer1Deck(filterP1Cards);
 
@@ -146,7 +146,7 @@ const Card = (props) => {
     // const filterP2Cards = props.player2Deck.filter(card => card?._id !== P2chosenCard._id);
     // props.setPlayer2Deck(filterP2Cards);
 
-    dispatch(removeCardFromDeck(id, P2chosenCard._id));
+    dispatch(removeCardFromDeck(P2ChosenCard_id, P2chosenCard._id));
   }
 
   return (

@@ -22,7 +22,7 @@
   width: 220px;
   height: 160px;
   border-radius: 5px;
-  /* display: flex; */
+  display: flex;
   /* grid-column-start: 1;
   grid-column-end: 2; */
   border: 2px solid black;
@@ -31,22 +31,18 @@
   background-color: red;
   box-shadow: inset 0 10px 30px 10px rgb(254 244 120 / 70%);
 
-  /* justify-content: center;
-    align-items: center; */
+  justify-content: center;
+    /* align-items: center; */
+    overflow: hidden;
 }
 
 .card-img-details {
-  /* width: 70%;
-    height: 100%;
-    background-size:2000px; */
-  /* border: 2px solid red; */
-  /* position: absolute;
-  top: 0;
-  left: 0; */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* overflow: visible; */
+
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  
 }
 
 .card-details {
