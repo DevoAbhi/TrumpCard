@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { updateScore } from '../../stateManager/action-creators';
 import Card from '../pages/Card';
 import Modal from './Modal';
 
@@ -8,11 +10,13 @@ import Button from './Button';
 
 function GameSection(props) {
 
+    const dispatch = useDispatch();
+
     const [winner, setWinner] = useState({});
     const [loser, setLoser] = useState({});
     const [attributeChosen, setAttributeChosen] = useState({});
     const [isTie, setIsTie] = useState(false);
-    const [margin, setMargin] = useState({});
+
     const [showModal, setShowModal] = useState(false);
 
 
@@ -30,19 +34,20 @@ function GameSection(props) {
             //Player 1 won
             setWinner({...props.player1ChosenCard, name: props.player1});
             setLoser({...props.player2ChosenCard, name: props.player2});
-            // setWinner(props.player1ChosenCard);
-            // setLoser(props.player2ChosenCard);
             const diff = randomAttributeP1.value - randomAttributeP2.value;
-            setMargin(diff);
+            props.setMargin({winner: "Player1", score: diff});
+
+            dispatch(updateScore("PLAYER 1", diff));
+
         }
         else if(parseInt(randomAttributeP2.value, 10) > parseInt(randomAttributeP1.value, 10)) {
             //Player 2 won
             setWinner({...props.player2ChosenCard, name: props.player2});
             setLoser({...props.player1ChosenCard, name: props.player1});
-            // setWinner(props.player2ChosenCard);
-            // setLoser(props.player1ChosenCard);
             const diff = randomAttributeP2.value - randomAttributeP1.value;
-            setMargin(diff);
+            props.setMargin({winner: "Player2", score: diff});
+
+            dispatch(updateScore("PLAYER 2", diff));
         }
         else {
             // Tie
@@ -60,10 +65,11 @@ function GameSection(props) {
         <div className="gameArea">
             {showModal && <Modal
                 isTie={isTie}
+                setIsTie={setIsTie}
                 attributeChosen={attributeChosen}
                 winner={winner}
                 loser={loser}
-                margin={margin}
+                margin={props.score}
                 setShowModal={setShowModal}
             ></Modal>}
 
