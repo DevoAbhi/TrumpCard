@@ -4,6 +4,7 @@ import { combineReducers } from "redux";
 
 import auth from "./auth";
 import card from './card';
+import score from "./score";
 
-export const reducers = combineReducers({ auth, card });
+export const reducers = combineReducers({ auth, card, score });
 // export const reducers = combineReducers({ auth: authReducer });
