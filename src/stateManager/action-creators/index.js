@@ -84,3 +84,14 @@ export const removeCardFromDeck = (P1cardId, P2cardId) => async (dispatch) => {
         console.log("Error while getting the cards -> ", error);
     }
 }
+
+export const updateScore = (winner, score) => (dispatch) => {
+    try {
+        dispatch({
+            type: winner,
+            payload: {score}
+        })
+    } catch (error) {
+        console.log("Error while updating the score -> ", error);
+    }
+}
